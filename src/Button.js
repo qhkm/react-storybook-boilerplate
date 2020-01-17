@@ -1,8 +1,16 @@
-import React from 'react'
+import React from "react";
+import { string, func } from "prop-types";
 
+export const Button = ({ bg, onClick, children }) => {
+    return (
+        <button onClick={onClick} style={{ backgroundColor: bg }}>
+            {children}
+        </button>
+    );
+};
 
-export const Button = ({ bg, children }) => {
-  return (
-    <button style={{ backgroundColor: bg }}>{children}</button>
-  )
-}
+Button.propTypes = {
+    bg: string,
+    onClick: func,
+    children: string
+};
